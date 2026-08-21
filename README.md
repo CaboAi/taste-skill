@@ -16,32 +16,32 @@
 
 <table align="center">
   <tr>
-    <td colspan="2"><strong>🥇 Gold Sponsors</strong></td>
+    <td colspan="2"><strong>Gold Sponsors</strong></td>
   </tr>
   <tr>
     <td align="center" width="120"><a href="https://novamira.ai/"><img src="https://github.com/use-novamira.png" alt="Novamira" width="62" height="62" /></a></td>
     <td><sub><a href="https://novamira.ai/"><strong>Novamira</strong></a> · Full WordPress access for AI agents</sub></td>
   </tr>
   <tr>
-    <td colspan="2"><strong>🥈 Silver Sponsors</strong></td>
+    <td colspan="2"><strong>Silver Sponsors</strong></td>
   </tr>
   <tr>
-    <td colspan="2"><strong>🥉 Bronze Sponsors</strong></td>
+    <td colspan="2"><strong>Bronze Sponsors</strong></td>
   </tr>
   <tr>
     <td align="center" width="120">
       <a href="https://interfaces.dev">
-        <img src="https://ho1jr3x2dcwdu3t5.public.blob.vercel-storage.com/interfaces-og-image.png" alt="Interfaces" width="112" />
+        <img src="assets/sponsors/interfaces-dev-icon.webp" alt="Interfaces" width="62" height="62" />
       </a>
     </td>
-    <td><sub><a href="https://interfaces.dev"><strong>interfaces.dev</strong></a> · the design engineering magazine</sub></td>
+    <td><sub><a href="https://interfaces.dev"><strong>interfaces.dev</strong></a> · A design engineering magazine by <a href="https://github.com/jakubkrehel"><strong>Jakub Krehel</strong></a></sub></td>
   </tr>
   <tr>
     <td align="center" width="120">
       <a href="https://reactbits.dev">
         <picture>
-          <source media="(prefers-color-scheme: dark)" srcset="assets/sponsors/reactbits-logo-dark.svg" />
-          <img src="assets/sponsors/reactbits-logo-light.svg" alt="React Bits" width="112" />
+          <source media="(prefers-color-scheme: dark)" srcset="assets/sponsors/reactbits-icon-dark.svg" />
+          <img src="assets/sponsors/reactbits-icon-light.svg" alt="React Bits" width="62" height="62" />
         </picture>
       </a>
     </td>
@@ -60,12 +60,12 @@
     <td><sub><a href="https://www.sent.dm"><strong>Sent.dm</strong></a> · messaging APIs for SMS, WhatsApp, and RCS</sub></td>
   </tr>
   <tr>
-    <td align="center" width="120"><a href="https://www.kimi.com"><img src="https://raw.githubusercontent.com/MoonshotAI/Kimi-K2/main/figures/kimi-logo.png" alt="Kimi" width="62" /></a></td>
+    <td align="center" width="120"><a href="https://www.kimi.com"><img src="assets/sponsors/kimi-icon.png" alt="Kimi" width="62" height="62" /></a></td>
     <td>
       <a href="https://www.kimi.com">
         <picture>
           <source media="(prefers-color-scheme: dark)" srcset="https://kimi-file.moonshot.cn/prod-chat-kimi/kfs/4/1/2026-06-05/1d8h69mt3v89kkekg24gg" />
-          <img alt="Kimi Open Source Friends" src="https://kimi-file.moonshot.cn/prod-chat-kimi/kfs/4/1/2026-06-05/1d8h69fudcmosb3pipls0" height="40" />
+          <img alt="Kimi Open Source Friends" src="https://kimi-file.moonshot.cn/prod-chat-kimi/kfs/4/1/2026-06-05/1d8h69fudcmosb3pipls0" height="48" />
         </picture>
       </a>
     </td>
