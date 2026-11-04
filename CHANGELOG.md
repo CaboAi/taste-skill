@@ -4,6 +4,39 @@ All notable changes to taste-skill live here. The repo follows SemVer-ish discip
 
 ---
 
+## 2.1.5 - 2026-10-25
+
+Fixes from the community. Thanks to everyone who reported and sent them.
+
+- **Safe text in charts and split headings** ([#160](https://github.com/Leonxlnx/taste-skill/issues/160), [#169](https://github.com/Leonxlnx/taste-skill/pull/169), thanks @jcastilla89 and @Pablolakotek): `charts.js` and the `Stage.split` fallback escape the text they insert, so a chart label or heading that comes from user data can no longer inject markup.
+- **No lost screenshots when two widths share a class** ([#162](https://github.com/Leonxlnx/taste-skill/issues/162), [#165](https://github.com/Leonxlnx/taste-skill/pull/165), thanks @nosawavey-spec and @ketpatil77): `--widths 1280,1024,768,390` keeps both tablet renders (`tablet-1024-*`, `tablet-768-*`).
+- **Keyboard and accessible names** ([#170](https://github.com/Leonxlnx/taste-skill/pull/170), thanks @MrBinnacle): every control works from the keyboard and has an accessible name; a control explains itself by its form, not by a sentence beside it.
+- **The italic faces load** ([#161](https://github.com/Leonxlnx/taste-skill/issues/161), with the fix from [#166](https://github.com/Leonxlnx/taste-skill/pull/166), thanks @nosawavey-spec and @ketpatil77): Boska, Erode and Sentient request their italic weight, so the browser no longer fakes it.
+- **`edge-text` no longer fails ellipsised lines** ([#156](https://github.com/Leonxlnx/taste-skill/issues/156), thanks @shoctroper): text is measured where the reader sees it, clipped by `overflow`.
+- **Inspect the production build** ([#171](https://github.com/Leonxlnx/taste-skill/issues/171), thanks @lilozzy): the Gate step says to run the last check on the built page, and the inspector warns (`dev-server`) when it is looking at a Vite, webpack or Next dev server.
+- **The redraw rule names its third reason** ([#163](https://github.com/Leonxlnx/taste-skill/issues/163), thanks @Tsury): a section that cannot hold the real content.
+- CI now also checks that every text file is clean UTF-8 (a double-encoded save is caught), runs the inspector file-name tests, and parses the scene scripts.
+
+## 2.1.4 - 2026-10-20
+
+- **Fix: one inspector run could delete the browser profile of another run that was still going** ([#157](https://github.com/Leonxlnx/taste-skill/issues/157), fixed in [#158](https://github.com/Leonxlnx/taste-skill/pull/158) by @t4sh). On macOS and Linux Chrome keeps no `lockfile`, so the sweep added in 2.1.0 judged a profile unused by its age alone, and a second run started during a long one could pull that run's profile away. #158 removed the sweep and added a regression test.
+- **Leftover profiles are cleaned up again, safely.** Every profile now carries `taste-skill-owner.json` with the machine and the process IDs of the run and its Chrome. A later run removes a profile left by a killed run only when that file names this machine and neither process is alive; a profile without the file is never touched. Profiles left by earlier versions are not removed automatically: delete the `ad-chrome-*` folders in your temp folder (or in `TASTE_SKILL_TMP`) by hand.
+
+## 2.1.3 - 2026-10-19
+
+One repo, one skill. Nothing in `design-taste-frontend` changed.
+
+- **The classic skills moved** to their own repo, [Leonxlnx/taste-skill-classics](https://github.com/Leonxlnx/taste-skill-classics): `high-end-visual-design`, `minimalist-ui`, `industrial-brutalist-ui`, `gpt-taste`, `stitch-design-taste`, `design-taste-frontend-v1` and `design-taste-frontend-v2-experimental`. Same install names, same files. The `taste-skill-classics` Claude Code plugin moved with them (`/plugin marketplace add Leonxlnx/taste-skill-classics`).
+- **The pointer folders are gone:** `brandkit`, `image-to-code`, `imagegen-frontend-web` and `imagegen-frontend-mobile` (in [Leonxlnx/imagegen-skills](https://github.com/Leonxlnx/imagegen-skills) since 2.1.1) and `redesign-existing-projects` (part of `design-taste-frontend` since 2.1.1). The README lists where every old install name lives now.
+- **Removed:** `research/laziness/` (it belonged to `full-output-enforcement`, removed in 2.1.1), the outdated `skills/llms.txt`, `skill.sh` and its test, and unused images.
+- **README:** a wordmark instead of the banner, a TasteCode banner that stands out in dark mode, fewer badges, the community sponsors always shown.
+- The Codex plugin loads only `design-taste-frontend` now.
+
+## 2.1.2 - 2026-10-19
+
+- **Fix: `design-taste-frontend` did not load in Claude Code** ([#151](https://github.com/Leonxlnx/taste-skill/issues/151)). The description added in 2.1.0 contained an unquoted `: `, so its YAML frontmatter failed to parse and the skill was silently dropped ("Unknown skill"). It is now a folded block scalar.
+- **So it cannot happen again:** `tests/frontmatter.mjs` parses every `SKILL.md` frontmatter (and every `agents/openai.yaml`) with a strict YAML parser, checks names, description length and the plugin manifests, and a GitHub Actions workflow (`check-skills.yml`) runs it, the registry test and a syntax check of the scripts on every push and pull request.
+
 ## 2.1.1 - 2026-10-19
 
 One skill to reach for. Installing the repo no longer means an agent might pick an older skill for the job.
